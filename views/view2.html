@@ -4,14 +4,13 @@
     </div>
     <form name="GroceryForm">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Grocery item">
+            <input type="text" class="form-control" placeholder="Grocery item" ng-model="groceryItems.itemName">
         </div>
         <div class="form-group">
-            <a href="#/" class="btn btn-success btn-lg btn-block">
+            <button type="button" class="btn btn-success btn-lg btn-block" ng-click="save()">
                 <span class="glyphicon glyphicon-pushpin"></span>
                 Save
-            </a>
-
+            </button>
         </div>
         <div class="form-group">
             <a href="#/" class="btn btn-success btn-lg btn-block">
