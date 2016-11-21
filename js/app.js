@@ -31,13 +31,13 @@ app.config(function($routeProvider) {
 app.service("GroceryService",function () {
     var groceryService={};
     groceryService.groceryItem=[
-        {id:1,completed: true, itemName: 'milk', date: '2014-10-01'},
-        {id:2,completed: true, itemName: 'coookies', date: '2014-10-02'},
-        {id:3,completed: true, itemName: 'ice cream', date: '2014-10-03'},
-        {id:4,completed: true, itemName: 'eggs', date: '2014-10-05'},
-        {id:5,completed: true, itemName: 'bread', date: '2014-10-10'},
-        {id:6,completed: true, itemName: 'potatoes', date: '2014-10-21'},
-        {id:7,completed: true, itemName: 'rice', date: '2014-10-25'},
+        {id:1,completed: false, itemName: 'milk', date: new Date('October 1,2016 11:11:00')},
+        {id:2,completed: false, itemName: 'coookies', date: new Date('October 2,2016 11:11:00')},
+        {id:3,completed: false, itemName: 'ice cream', date: new Date('October 3,2016 11:11:00')},
+        {id:4,completed: false, itemName: 'eggs', date: new Date('October 4,2016 11:11:00')},
+        {id:5,completed: false, itemName: 'bread', date: new Date('October 5,2016 11:11:00')},
+        {id:6,completed: false, itemName: 'potatoes', date: new Date('October 6,2016 11:11:00')},
+        {id:7,completed: false, itemName: 'rice', date: new Date('October 7,2016 11:11:00')},
     ];
 
     groceryService.findById=function(id){
@@ -77,6 +77,15 @@ app.service("GroceryService",function () {
 
     }
 
+    groceryService.removeItem=function(item){
+        var index=groceryService.groceryItem.indexOf(item);
+        groceryService.groceryItem.splice(index,1);
+    }
+
+    groceryService.markCompleted=function(entry){
+        entry.completed=!entry.completed;
+    }
+
 
     return groceryService;
 });
@@ -84,6 +93,14 @@ app.service("GroceryService",function () {
 app.controller('HomeController',["$scope","GroceryService",function ($scope,GroceryService) {
     $scope.appTitle="Grocery list app";
     $scope.groceryItem=GroceryService.groceryItem;
+
+    $scope.removeItem=function(entry){
+        GroceryService.removeItem(entry);
+    };
+
+    $scope.markCompleted=function(entry){
+        GroceryService.markCompleted(entry);
+    }
 }]);
 
 
@@ -110,3 +127,10 @@ app.controller('GroceryListItemController',["$scope","$routeParams","$location",
 
     //console.log($scope.groceryItem);
 }]);
+
+app.directive("tbItemList",function(){
+    return{
+        restrict:"E",
+        templateUrl:"views/groceryItem.html"
+    }
+});
