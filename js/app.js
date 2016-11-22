@@ -28,17 +28,21 @@ app.config(function($routeProvider) {
 
 });
 
-app.service("GroceryService",function () {
+app.service("GroceryService",function ($http) {
     var groceryService={};
-    groceryService.groceryItem=[
-        {id:1,completed: false, itemName: 'milk', date: new Date('October 1,2016 11:11:00')},
-        {id:2,completed: false, itemName: 'coookies', date: new Date('October 2,2016 11:11:00')},
-        {id:3,completed: false, itemName: 'ice cream', date: new Date('October 3,2016 11:11:00')},
-        {id:4,completed: false, itemName: 'eggs', date: new Date('October 4,2016 11:11:00')},
-        {id:5,completed: false, itemName: 'bread', date: new Date('October 5,2016 11:11:00')},
-        {id:6,completed: false, itemName: 'potatoes', date: new Date('October 6,2016 11:11:00')},
-        {id:7,completed: false, itemName: 'rice', date: new Date('October 7,2016 11:11:00')},
-    ];
+    groceryService.groceryItem=[];
+
+    $http.get("data/server_data.json")
+        .success(function (data) {
+            groceryService.groceryItem=data;
+
+            for(item in groceryService.groceryItem){
+                groceryService.groceryItem[item].date=new Date(groceryService.groceryItem[item].date);
+            }
+        })
+        .error(function (data,status) {
+            alert("Something went wrong");
+        })
 
     groceryService.findById=function(id){
         for(var item in groceryService.groceryItem){
@@ -101,6 +105,10 @@ app.controller('HomeController',["$scope","GroceryService",function ($scope,Groc
     $scope.markCompleted=function(entry){
         GroceryService.markCompleted(entry);
     }
+    
+    $scope.$watch(function () {return GroceryService.groceryItem;},function (groceryItem) {
+            $scope.groceryItem=groceryItem;
+        });
 }]);
 
 
