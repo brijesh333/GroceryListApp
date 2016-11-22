@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7c7f7a7d-bec9-44fb-8ffc-4b2e1d839916" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/addedItem.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/updatedItem.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/view2.html" afterPath="$PROJECT_DIR$/views/view2.html" />
     </list>
     <ignored path="GroceryListApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,8 +80,8 @@
       <file leaf-file-name="view2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/view2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="135">
+              <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -92,8 +90,8 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="75" column="51" lean-forward="false" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
+            <state relative-caret-position="45">
+              <caret line="3" column="50" lean-forward="false" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -165,7 +163,6 @@
       <list>
         <option value="$PROJECT_DIR$/inputItem.html" />
         <option value="$PROJECT_DIR$/lib/underscore.js" />
-        <option value="$PROJECT_DIR$/views/view2.html" />
         <option value="$PROJECT_DIR$/views/view1.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/index.html" />
@@ -174,6 +171,7 @@
         <option value="$PROJECT_DIR$/data/addedItem.json" />
         <option value="$PROJECT_DIR$/data/updatedItem.json" />
         <option value="$PROJECT_DIR$/js/app.js" />
+        <option value="$PROJECT_DIR$/views/view2.html" />
       </list>
     </option>
   </component>
@@ -336,12 +334,12 @@
       <workItem from="1479566746796" duration="8947000" />
       <workItem from="1479705405485" duration="301000" />
       <workItem from="1479705763595" duration="5733000" />
-      <workItem from="1479744323239" duration="3251000" />
+      <workItem from="1479744323239" duration="4057000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23164000" />
+    <option name="totallyTimeSpent" value="23970000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="21" width="1325" height="747" extended-state="6" />
@@ -731,14 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="75" column="51" lean-forward="false" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/view1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -760,10 +750,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="50" lean-forward="false" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/view2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="135">
+          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding />
         </state>
       </provider>

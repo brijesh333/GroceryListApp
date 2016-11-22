@@ -5,11 +5,11 @@
     <form name="GroceryForm">
         <p><b>Dirty : </b>{{GroceryForm.$dirty}}</p>
         <p><b>Valid : </b>{{GroceryForm.$valid}}</p>
-        <div class="alert alert-warning" ng-show="!GroceryForm.$valid">
+        <div class="alert alert-danger" ng-show="!GroceryForm.$valid">
             <strong>Warning!</strong> Please enter valid item name.
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" ng-pattern="/^[a-zA-Z\s]*$/" placeholder="Grocery item" ng-model="groceryItems.itemName" required>
+            <input type="text" class="form-control" ng-minlength="5" ng-pattern="/^[a-zA-Z\s]*$/" placeholder="Grocery item" ng-model="groceryItems.itemName" required>
         </div>
         <div class="form-group">
             <button type="button" class="btn btn-success btn-lg btn-block" ng-click="GroceryForm.$valid && save()">
