@@ -70,12 +70,27 @@ app.service("GroceryService",function ($http) {
     groceryService.save=function(entry){
         var updatedItem=groceryService.findById(entry.id);
         if(updatedItem){
-            updatedItem.completed=true;
-            updatedItem.itemName=entry.itemName;
-            updatedItem.date=entry.date;
+            $http.post("data/updatedItem.json",entry)
+                .success(function (data) {
+                    if(data.status==1){
+                        updatedItem.completed=false;
+                        updatedItem.itemName=entry.itemName;
+                        updatedItem.date=entry.date;
+                    }
+                })
+                .error(function(data, status){
+                    alert("went wrong with update");
+                })
         }
         else{
-            entry.id=groceryService.getNewId();
+            $http.post("data/addedItem.json",entry)
+                .success(function (data) {
+                    entry.id=data.newId;
+                })
+                .error(function (data,status) {
+                    alert("wrong with post method");
+                })
+            //entry.id=groceryService.getNewId();
             groceryService.groceryItem.push(entry);
         }
 
