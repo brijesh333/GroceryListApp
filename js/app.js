@@ -96,9 +96,18 @@ app.service("GroceryService",function ($http) {
 
     }
 
-    groceryService.removeItem=function(item){
-        var index=groceryService.groceryItem.indexOf(item);
-        groceryService.groceryItem.splice(index,1);
+    groceryService.removeItem=function(entry){
+        $http.post("data/deletedItem.json",{id:entry.id})
+            .success(function(data){
+                if(data.status){
+                    var index=groceryService.groceryItem.indexOf(entry);
+                    groceryService.groceryItem.splice(index,1);
+                }
+            })
+            .error(function(){
+                alert("something wrong happened in delete");
+            });
+
     }
 
     groceryService.markCompleted=function(entry){
